@@ -1,0 +1,278 @@
+---------------------------------------------------------------
+[ 2021-09-24T15:02:44+08:00 ] 127.0.0.1 GET www.auth.com/
+[运行时间：0.804279s] [吞吐率：1.24req/s] [内存消耗：1,651.30kb] [文件加载：40]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-09-24T15:02:44+08:00 ] 127.0.0.1 GET www.auth.com/index/Login/index.html
+[运行时间：0.174872s] [吞吐率：5.72req/s] [内存消耗：1,695.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=51j2525m6evmt3s3336h1qs263',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/Login/index_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ D:\2code\1php\zxy\auth-config\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\login\index.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'username',
+  2 => 'domain_name',
+  3 => 'version',
+  4 => 'staticsResourceUrl',
+  5 => 'commonStaticsResourceUrl',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-09-24T15:02:44+08:00 ] 127.0.0.1 GET www.auth.com/index/Login/index.html
+[运行时间：0.054137s] [吞吐率：18.47req/s] [内存消耗：1,548.66kb] [文件加载：38]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=51j2525m6evmt3s3336h1qs263',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/Login/index_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ D:\2code\1php\zxy\auth-config\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\login\index.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'username',
+  2 => 'domain_name',
+  3 => 'version',
+  4 => 'staticsResourceUrl',
+  5 => 'commonStaticsResourceUrl',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-09-24T15:02:45+08:00 ] 127.0.0.1 GET www.auth.com/captcha.html
+[运行时间：0.207910s] [吞吐率：4.81req/s] [内存消耗：1,225.32kb] [文件加载：31]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=51j2525m6evmt3s3336h1qs263',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/Login/index.html',
+  'accept' => 'image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\2code\1php\zxy\auth-config\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-09-24T15:02:45+08:00 ] 127.0.0.1 GET www.auth.com/captcha.html
+[运行时间：0.085138s] [吞吐率：11.75req/s] [内存消耗：1,225.86kb] [文件加载：31]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=51j2525m6evmt3s3336h1qs263',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/Login/index.html',
+  'purpose' => 'prefetch',
+  'accept' => 'application/signed-exchange;v=b3;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\2code\1php\zxy\auth-config\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-09-24T16:57:29+08:00 ] 127.0.0.1 GET www.auth.com/index/Login/index.html
+[运行时间：0.098422s] [吞吐率：10.16req/s] [内存消耗：1,549.70kb] [文件加载：38]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=51j2525m6evmt3s3336h1qs263',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/Login/index_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ D:\2code\1php\zxy\auth-config\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\login\index.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'username',
+  2 => 'domain_name',
+  3 => 'version',
+  4 => 'staticsResourceUrl',
+  5 => 'commonStaticsResourceUrl',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-09-24T16:57:30+08:00 ] 127.0.0.1 GET www.auth.com/captcha.html
+[运行时间：0.118557s] [吞吐率：8.43req/s] [内存消耗：1,225.48kb] [文件加载：31]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=51j2525m6evmt3s3336h1qs263',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/Login/index.html',
+  'accept' => 'image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.52',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\2code\1php\zxy\auth-config\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File

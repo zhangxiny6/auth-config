@@ -1,0 +1,246 @@
+
+/* =================================================================================
+Login Pages
+================================================================================= */
+.login-top{
+    height: 100px;
+    max-width: 1366px;
+    margin: auto;
+}
+.login-top-logo{
+    float:left;
+    width: 400px;
+}
+.login-top-logo img{
+    padding-top: 20px;
+    padding-left: 40%;
+}
+.login-top-right{
+    color:#666;
+    text-align:center;
+    padding-top:5px;
+    float: right;
+    padding-right: 13%;
+}
+.login-top-right a{
+    color: #666666;
+    padding-left:10px;
+    padding-right:10px;
+}
+.login-top-right a:hover{
+    text-decoration: underline;
+
+}
+.login-form{
+    height: 460px;
+    padding-top:145px;
+    padding-bottom:15px;
+    /*background: url(https://statics.hdcnooc.com/common/pc/image/login/login-bg1.jpg) no-repeat top center;*/
+
+}
+.login-form form {
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 350px;
+    height: 320px;
+}
+.login-form form .top h1 {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-family: '庞门正道标题体';
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    color: #199ED8;
+    font-size: 28px;
+}
+
+.login-form form .form-area {
+    padding: 0 15px 0 15px;
+    /*background-color: #fff;*/
+    width: 340px;
+    margin: auto;
+    height: 220px;
+}
+
+.login-form form .form-area .group {
+    position: relative;
+    margin-bottom: 5px;
+}
+.group input{
+    border:1px solid #E5E5E5;
+    box-shadow: none;
+}
+.login-form form .form-area .form-control {
+    height: 40px;
+    border-left :5px solid #009fd6 !important;
+}
+.login-form form .form-area .fa {
+    position: absolute;
+    top: 11px;
+    left: 13px;
+    font-size: 16px;
+    color: #C3C3C3;
+}
+.login-form form .form-area .btn {
+    height: 40px;
+    font-weight: 600;
+}
+.login-form form .form-area .checkbox {
+    margin-bottom: 20px;
+}
+
+.login-tab{
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+.login_active{
+    border-bottom: 2px solid #199ed8;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+    color: #ffFFFF;
+    opacity: 1!important;
+    cursor: pointer;
+}
+.submit_btn_login disabled{
+    color: #ffFFFF;
+    opacity: 1!important;
+}
+
+html, body{height: 100%;margin: 0px;padding: 0px; min-width: 1200px;}
+
+.center_bin_body_ui{height:inherit;position:relative;margin:0 auto;}
+
+
+/*登录界面表单验证样式*/
+.form-area>div>div>label.move {
+    transform: translate(0, 0);
+    transition: all 0.5s ease-out !important;
+    -webkit-transform: translate(0, 0)!important;
+    -moz-transform: translate(0, 0);
+    float: right !important;
+    opacity: 1!important;
+    visibility: visible!important;
+}
+.form-area>div>div>label.error {
+    position: absolute;
+    color: #fff;
+    padding: 0px 4px;
+    margin-top: 5px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    top: 0;
+    font-weight: 100 !important;
+    line-height: 30px;
+    transform: translate(25px, 0);
+    transition: all 0.5s ease-out;
+    -webkit-transform: translate(25px, 0);
+    -moz-transform: translate(25px, 0);
+    opacity: 0;
+    visibility: hidden;
+    cursor: text;
+    background: #Fa5b5b;
+}
+.loginName {
+    right: 5px;
+}
+.loginPass {
+    right: 5px;
+}
+.loginYzm{
+    right: 117px;
+}
+.check-tips{
+    margin-left: 10px;
+}
+.check-margin{
+    padding-left: 20px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px!important;
+}
+
+
+.bodybg{
+    background-color: #fff;
+    overflow: hidden;
+}
+html,body{
+    height: 100%;
+}
+.login-body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    /*background: #468ae3;*/
+    background: url(/static/image/loginbg3.png) no-repeat top center #468ae3;
+}
+.tab-content-hi{
+    /*padding-top:30px;*/
+}
+.form-validate-code{
+    margin-bottom:0px !important;
+}
+
+
+.user_login_validation{
+    display: inline-block;
+    width: 65%;
+    border-radius: 0;
+}
+.prompt{
+    font-size:12px;
+    color: #666;
+    text-align: center;
+}
+body{
+    overflow: hidden;
+}
+::-webkit-scrollbar-track{
+    background-color: #2d3d2f  !important;
+    border-radius:0;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(75, 111, 75);
+    border-radius:5px;
+}
+
+
+.copyright{
+    margin: 20px 0;
+    text-align: center;
+    color: #585858;
+}
+
+.special_color{
+    color: #CC3300;
+    border-bottom: solid 1px;
+}
+.special_color:hover{
+    color: #CC3300;
+    border-bottom: solid 1px;
+}
+.technical_support{
+    color: #a9a9a9;
+}
+.technical_support a{
+    color:#848484;
+    /*a9a9a9*/
+}
+.technical_support a:hover{
+    text-decoration: underline;
+}
+.login-top-right img{
+    height:70px;
+    width:70px;
+}
+.login_forget_pass{
+    float:right;
+    color:#666;
+    cursor: pointer;
+}
+.login_forget_pass:hover{
+    text-decoration:underline;
+}

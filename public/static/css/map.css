@@ -1,0 +1,301 @@
+html, body { height: 100%; margin: 0; padding: 0; }
+#map-wrapper{
+     text-align:center;
+     height:100%;
+}
+#map{
+     width:95%;
+     height:94%;
+}
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+.pac-container {
+    font-family: Roboto;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+#target {
+    width: 345px;
+}
+/*= Operation Button =Start
+--------------------------------------------*/
+.page-btn-container{
+    position:fixed;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:45px;
+    background-color:#F7F7F7;
+    border-top:1px solid #B0B0BD;
+    z-index:9999;
+}
+.page-btn-box{
+    margin-top:8px;
+    text-align:right;
+}
+.page-opt-btn{
+    width:105px;
+    height:33px;
+    background-color:#F6F6F6;
+    border-radius:5px;
+    border:1px solid #E8C0C0;
+    cursor:pointer;
+    margin-right:30px;
+    letter-spacing:2px;
+    font-size:15px;
+    line-height:33px;
+}
+.page-save-btn{
+    background-color:#5a98de;
+    color:white;
+    border:none;
+}
+.page-save-btn:hover{
+    background-color:#386EAD;
+    border:none;
+}
+.cancel-btn:hover{
+    background-color:#ECE3E3;
+}
+.page-print-btn:hover{
+    background-color:#7779E2;
+    border:none;
+}
+/*= Operation Button=Start
+--------------------------------------------*/
+
+
+/*=Map Button= Start
+----------------------------------*/
+#draw-btn{
+    margin:11px;
+    z-index:10;
+    position:absolute;
+    top: 0px; left:520px;
+}
+#draw-btn .btn-item{
+    float:left;
+    direction:ltr;
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    color: rgb(86, 86, 86);
+    font-family: Roboto, Arial, sans-serif; -webkit-user-select: none;
+    font-size: 11px; padding: 4px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -webkit-background-clip: padding-box;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+}
+.btn-img{
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    position:relative;
+}
+#move-btn-box img{
+    position:absolute;
+    left: 0px;
+    top: -80px;
+    -webkit-user-select: none;
+    border: 0px; padding: 0px;
+    margin: 0px; max-width: none;
+    width: 16px; height: 192px;
+}
+#marker-btn-box img{
+    position: absolute; left: 0px; top: -176px;
+    -webkit-user-select: none;
+    border: 0px; padding: 0px;
+    margin: 0px;
+    max-width: none;
+    width: 16px;
+    height: 192px;
+}
+
+
+
+/*=search=*/
+.search-bar #search{
+    position:absolute;
+    z-index:10;
+    left:130px;
+    top:10px;
+}
+.search .search-box{
+    position: relative;
+    z-index:10;
+    width: 380px;
+    height:35px;
+    background:#fff;
+    box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+    border-radius: 3px;;
+}
+.search-box img.logo{
+    display: block;
+    left:8px;
+    width: 34px;
+    z-index: 99999;
+    cursor: pointer;
+    top:3px;
+    height: 34px;
+    position: absolute;
+    border-radius:5px;
+}
+.search-box .inp-box,.search-box .logo{
+    top: 6px;
+    height: 34px;
+    position: absolute;
+}
+.search-box .inp-box{
+    left: 50px;
+    width: 324px;
+    z-index:10;
+    border-radius: 2px;
+}
+.inp-box #search-inp{
+    position: absolute;
+    top:2px;
+    left: 0;
+    text-indent: 8px;
+    z-index: 2200;
+    border: none;
+    width: 276px;
+    height:20px;
+    padding: 0;
+    line-height: 20px;
+    letter-spacing: .5px;
+}
+.inp-box #search-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9308;
+    width: 32px;
+    height:20px;
+}
+#search-btn .search-log{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    background-image:url('https://statics.hdcnooc.com/common/pc/image/map/search-pic.png');
+    background-size:25px 25px;
+    background-repeat:no-repeat;
+    cursor: pointer;
+    margin-top:1px;
+    opacity:0.3;
+}
+#search-btn .search-log:hover{
+    opacity:1;
+}
+input{
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+}
+.amap-sug-result{
+    top:45px !important;
+}
+
+
+/*====search return list===*/
+#result-list{
+    position:absolute;
+    top:30px;
+    left:135px;
+    z-index:11;
+    max-width:350px;
+}
+#result-list ul{
+    list-style-type:none;
+}
+#result-list ul li{
+    padding:5px;
+    border-bottom:1px solid #ccc;
+    background-color:white;
+    color:black;
+    cursor:pointer;
+    white-space: nowrap;  /*为应用text-overflow作准备，禁止换行 */
+    overflow: hidden;  /*为应用text-overflow作准备，禁止文本溢出显示 */
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+#result-list ul li:hover{
+    background-color:#E6DADA;
+}
+
+
+/*=高德地图操作按钮=
+---------------------------------*/
+#map-wrapper{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    position:absolute;
+}
+#mapContainer{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+}
+.operation-bar{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    height:40px;
+    background-color:white;
+    border-top:1px solid #aaa;
+    text-align:right;
+    margin-right:10px;
+}
+.operation-bar input{
+    width: 85px;
+    height:30px;
+    padding:0 10px;
+    line-height:25px;
+    background-color: #6554F3;
+    border:1px solid #6554F3;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-top:5px;
+    margin-right:30px;
+    cursor:pointer;
+}

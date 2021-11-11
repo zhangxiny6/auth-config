@@ -1,0 +1,79 @@
+{extend name="base/main_base" /}
+{block name="style"}
+<style>
+    .aui_content{
+        padding:0px !important;
+    }
+    .max-height{  overflow:auto !important;
+        padding:10px !important;
+        height: 300px !important;}
+    .error_color{color:#e11222;}
+
+</style>
+{/block}
+{block name="content"}
+{if condition="$type eq 'update_error'"}
+<p class="error_color">{$msg}</p>
+<p>解决方法：</p>
+<p>1、检查路径是否正确</p>
+<p>2、指定的目录是否有完全控制的权限</p>
+{elseif condition="$type eq 'relation'"}
+<div class="max-height">
+    <table class="table">
+        <thead>
+        <th>菜单地址</th>
+        <th>说明</th>
+        <th></th>
+        </thead>
+        <tbody class="data-list-tbody">
+        {volist name='relation_log' id='log'}
+        <tr>
+            <td>{$log.url}</td>
+            <td>{$log.msg}</td>
+            <td>
+                {if condition='$log.status eq 1'}
+                <i style="color:#008a3a;" class="fa fa-check"></i>
+                {else/}
+                <i style="color:#e11222;" class="fa fa-times"></i>
+                {/if}
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+{else/}
+{empty name='msgArr.authClassMsg.successNum'}
+未找到控制器，请检查路径！
+{else\}
+<table class="table">
+    <thead>
+    <th>配置名</th>
+    <th>控制器(成功/失败)</th>
+    <th>函数(成功/失败)</th>
+    </thead>
+    <tbody class="data-list-tbody">
+    <tr>
+        <td>{$msgArr.authConfigMsg.name}</td>
+        <td>
+            <font color="#000">{$msgArr.authClassMsg.successNum}</font>
+            /
+            <font color="#e11222">{$msgArr.authClassMsg.errorNum}</font>
+        </td>
+        <td>
+            <font color="#000">{$msgArr.authClassMsg.methodSuccessNum}</font>
+            /
+            <font color="#e11222">{$msgArr.authClassMsg.methodErrorNum}</font>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{/empty}
+{/if}
+{/block}
+
+{block name='script'}
+{include file="common/validform"/}
+<script>
+</script>
+{/block}

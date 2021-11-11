@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="renderer" content="webkit">
+        <meta charset="utf-8"/>
+        {block name="page-title"}
+        <title>
+            {$WEB_SITE_TITLE|default=''}
+        </title>
+        {/block}
+        <meta content="" name="description"/>
+        <meta content="caiweiming" name="author"/>
+        <meta content="noindex, nofollow" name="robots"/>
+        <meta content="width=device-width,initial-scale=1,maximum-scale=1.0" name="viewport"/>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+        <script type="text/javascript">
+            //附件访问路径
+            var _public_file_domain = "";
+            var _public_file_domain_ym = '{:config("FileManageGetUrl")}';
+            var show_logistics_url = "{:url('Shipping/show_logistics')}";
+            var getUserListUrl = "{:url('Common/getUserInfo')}?keyword=";
+        </script>
+        {include file="common:header_file"/}
+        <style type="text/css">
+
+        </style>
+        <!--页面css-->
+        {block name="style"}{/block}
+    </head>
+    <body>
+        <div class="_show_public_loading_div" id="_show_public_loading_div">
+            <img src="/static/image/loading.gif" style="width:20px;vertical-align: middle;">
+            处理中...
+            </img>
+        </div>
+        <div class="main-base-content">
+            <!-- 主体内容 -->
+            {block name="content"}{/block}
+        </div>
+        {include file="common:footer_file"/}
+    </body>
+    <!--页面js-->
+    {block name="script"}
+    {/block}
+</html>

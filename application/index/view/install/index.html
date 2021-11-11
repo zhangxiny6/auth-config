@@ -1,0 +1,368 @@
+{extend name="base:main_base" /}
+{block name='style'}
+<link rel="stylesheet" href="/static/css/add_or_edit_style_01.css"/>
+<link rel="stylesheet" href="/static/plugins/jquery-steps/jquery.step.css"/>
+<link rel="stylesheet" href="/static/css/details_style_01.css"/>
+<link rel="stylesheet" href="/static/css/install.css"/>
+{/block}
+{block name="content"}
+<div class="container-padding">
+    <div class="step-body" id="myStep">
+        <div class="step-header" style="width:1000px;">
+            <ul>
+                <li><p>欢迎使用</p></li>
+                <li><p>运行环境检查</p></li>
+                <li><p>Mysql配置</p></li>
+                <li><p>权限规则配置</p></li>
+                <li><p>安装完成</p></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="wizard" class="wizard clearfix">
+        <div class="steps-content clearfix">
+            <input type="hidden" id="curStepNum" value="{$value}"/>
+            <section id="wizard-p-1" role="tabpanel" aria-labelledby="wizard-h-1" class="body current" aria-hidden="false" style="left:0;">
+                <div class="welcome_text">尊敬的用户，您好，欢迎使用权限管理系统！</div>
+                <dl class="welcome">
+                    <dt>一、产品背景：</dt>
+                    <dd>对于海量的权限节点，人工添加维护权限极易出现重复、遗漏的现象。并且对于添加人员，也是一项机械式的重复劳动。通过此系统，实现一键获取权限，权限配置完全可视化。为提高权限配置效率，避免纰漏，提供支持。</dd>
+                </dl>
+                <dl class="welcome">
+                    <dt>二、产品目标：</dt>
+                    <dd>通过权限配置平台，将实现以下功能：<dd>
+                    <dd>1、根据配置规则读取代码中所有类与函数，并生成权限结构<dd>
+                    <dd>2、可视化配置权限，通过筛选、关联精准配置权限，减少操作<dd>
+                </dl>
+                <dl class="welcome">
+                    <dt>三、产品须知：</dt>
+                    <dd>1、请确保函数头符合规则，否则将无法扫描出权限，其中authStatus、createTime、author可无，或您的权限标识不是authName，下面是系统建议使用的权限标识（可自定义）。<dd>
+                    <dd>
+                        <img src="/static/image/code_demo.png"/>
+                    </dd>
+                </dl>
+            </section>
+            <section id="wizard-p-2" role="tabpanel" aria-labelledby="wizard-h-2" class="body " aria-hidden="true">
+                {volist name="runtimeCheckArr" id="checkItem"}
+                <dl class="check_runtime">
+                    <dt>{$checkItem.title}</dt>
+                    {volist name="checkItem.value" id="checkValue"}
+                    <dd>
+                        {volist name="checkValue" id="valueData"}
+                        {if condition="$valueData == 'success'"}
+                        <span class="check_success">√</span>
+                        {elseif condition="$valueData == 'error'"}
+                        <span class="check_error" error_code="1">× 检测未通过</span>
+                        {else/}
+                        <div>{$valueData}</div>
+                        {/if}
+                        {/volist}
+                    </dd>
+                    {/volist}
+                </dl>
+                {/volist}
+            </section>
+            <section id="wizard-p-3" role="tabpanel" aria-labelledby="wizard-h-3" class="body" aria-hidden="true">
+                <form action="{:url('createDb')}" method='POST' id="create-db-form"
+                      class="vform form-horizontal" onsubmit="return false;">
+                    <div class="details-title">
+                        <div class="details-title-div">
+                            <span class="details-title-text">创建数据库</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">数据库类型:</label>
+                            <div class="col-sm-10">
+                                <select name="db_type" id="db_type">
+                                    <option value="0">mysql</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>数据库服务器:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="db_hostname" id="db_hostname"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>数据库用户名:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="db_username" name="db_username"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>数据库密码:</label>
+                            <div class="col-sm-10">
+                                <input type="password" id="db_password" name="db_password"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>数据库端口:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="db_hostport" name="db_hostport"
+                                       class="text form-control" value="3306"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="details-title">
+                            <div class="details-title-div">
+                                <span class="details-title-text">创始人帐号信息</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>管理员:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="u_username" name="u_username"
+                                       class="text form-control" value="admin"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>密码:</label>
+                            <div class="col-sm-10">
+                                <input type="password" id="u_password" name="u_password"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>确认密码:</label>
+                            <div class="col-sm-10">
+                                <input type="password" id="u_confirm_password" name="u_confirm_password"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-title">
+                        <div class="details-title-div">
+                            <span class="details-title-text">生成的数据库与表（若之前生成过，将覆盖）</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">数据库:</label>
+                            <div class="col-sm-10 form-group-text">
+                                auth_manage_db（1个）
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">数据表:</label>
+                            <div class="col-sm-10 form-group-text">
+                                am_auth_class、am_auth_config、am_manage_users（3个）
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="wizard-p-4" role="tabpanel" aria-labelledby="wizard-h-4" class="body" aria-hidden="true">
+                <form action="{:url('createAuth')}" method='POST' id="create-auth-form"
+                      class="vform form-horizontal" onsubmit="return false;">
+                    <div class="details-title">
+                        <div class="details-title-div">
+                            <span class="details-title-text">需要控制权限的数据库</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>数据库:</label>
+                            <div class="col-sm-10">
+                                <select id="controller_db" name="controller_db">
+                                    <option value="0">==请选择==</option>
+                                </select>
+                                <span class="check-tips">需要控制权限的数据库</span>
+                                <span id="menuAuthChoose" style="display: none;" class="help-block">系统已自动填充以下信息</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>菜单表:</label>
+                            <div class="col-sm-10">
+                                <select id="controller_menu" name="controller_menu">
+                                    <option value="0">==请先选择数据库==</option>
+                                </select>
+                                <span class="check-tips">需要控制权限的菜单表</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-title">
+                        <div class="details-title-div">
+                            <span class="details-title-text">菜单表对齐</span>
+                            <span class="check-tips">（系统只控制以下字段，其它字段如图标、菜单状态等，需要您自己管理）</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>菜单主键字段:</label>
+                            <div class="col-sm-10">
+                                <select id="menu_id" name="menu_id">
+                                    <option value="0">==请先选择数据表==</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>菜单标题字段:</label>
+                            <div class="col-sm-10">
+                                <select id="menu_title" name="menu_title">
+                                    <option value="0">==请先选择数据表==</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>菜单地址字段:</label>
+                            <div class="col-sm-10">
+                                <select id="menu_url" name="menu_url">
+                                    <option value="0">==请先选择数据表==</option>
+                                </select>
+                                <span class="check-tips">服务器验证的地址，非前端地址</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>菜单排序字段:</label>
+                            <div class="col-sm-10">
+                                <select id="menu_sort" name="menu_sort">
+                                    <option value="0">==请先选择数据表==</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>菜单父级字段:</label>
+                            <div class="col-sm-10">
+                                <select id="menu_pid" name="menu_pid">
+                                    <option value="0">==请先选择数据表==</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">模块:</label>
+                            <div class="col-sm-10">
+                                <select id="menu_module" name="menu_module">
+                                    <option value="">==请先选择数据表==</option>
+                                </select>
+                                <span class="check-tips">当一个菜单表存在多个系统的菜单时，请填写区分的字段</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="details-title">
+                            <div class="details-title-div">
+                                <span class="details-title-text">函数头定义</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>权限名称:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="auth_authName" name="auth_authName"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">作者:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="auth_author" name="auth_author"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">时间:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="auth_createTime" name="auth_createTime"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group-item">
+                            <label class="col-sm-2 control-label form-label">是否控制:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="auth_authStatus" name="auth_authStatus"
+                                       class="text form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="wizard-p-5" role="tabpanel" aria-labelledby="wizard-h-5" class="body" aria-hidden="true">
+                <div class="system-message">
+                    <div class="jump-success">
+                        <div class="img">
+                            <img src="/static/image/tpl_img/success.jpg?v=2019">
+                        </div>
+                        <div class="inf">
+                            <img class="icon" src="/static/image/tpl_img/suc-icon.png">安装配置成功！
+                        </div>
+                    </div>
+                    <p class="detail"></p>
+                    <p class="jump">
+                        <a class="btn btn-default"  href="{:url('Login/index')}">
+                            开始使用
+                        </a>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="dialog_footer_div_height"></div>
+    <div id="submit_buttonbar_postion">
+        <div class="f-r">
+            <button style="display: none;" id="prev-btn" class="btn btn-default" onclick="changeSteps(-1, false)">
+                上一步
+            </button>
+            <button id="next-btn" class="btn btn-default" onclick="changeSteps(1, true)">
+                下一步
+            </button>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+{include file="common/artdialog"/}
+{include file="common/notifit"/}
+{include file="common/searchSelect"/}
+{include file='common/jGrid'/}
+<script type="text/javascript" src="/static/plugins/jquery-steps/jquery.step.js"></script>
+<script type="text/javascript">
+    var getTablesByDb='{:Url("getTablesByDb")}';
+    var getFieldsByTable='{:Url("getFieldsByTable")}';
+    $("section").removeClass('current');
+    $("#wizard-p-"+'{$value}').addClass('current');
+</script>
+<script type="text/javascript" src="/static/js/install.js"></script>
+{/block}

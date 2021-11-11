@@ -1,0 +1,89 @@
+{extend name="base/main_base" /}
+{block name="style"}
+<style>
+    .checkbox.checkbox-inline{margin-right:10px;}
+    .check-tips{
+        color:#ADADAD;
+    }
+</style>
+{/block}
+{block name="content"}
+<div class="container-padding" style="padding:15px;">
+    <div class="panel-default">
+        <div class="panel-body">
+            <form action="{:URL('')}" class="vform form-horizontal" id="config_form" method="POST">
+                <input type="hidden" name="id" value="{$info['id']}"/>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label form-label">
+                        <span class="c-red">*</span>
+                        模块名称
+                    </label>
+                    <div class="col-sm-10">
+                        <input class="form-control input-w-40" datatype="*" id="name" name="name"
+                               nullmsg="请输入模块名称" placeholder="请输入模块名称" value="{$info['name']}" type="text"/>
+                        <span class="help-block">
+                            如crm管理系统
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label form-label">
+                        <span class="c-red">*</span>
+                        文件夹路径
+                    </label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control input-w-40" name="file_path" nullmsg="请输入文件路径"
+                                  placeholder="请输入文件路径" rows="3">{$info['file_path']}</textarea>
+                        <span class="help-block">
+                            需要权限控制的文件夹路径，请填写绝对路径，支持Windows路径与Linux路径
+                        </span>
+                    </div>
+                </div>
+                {if condition="$menu_field_module != ''"}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label form-label">
+                        模块界定值
+                    </label>
+                    <div class="col-sm-10">
+                        <input class="form-control input-w-40" name="module" placeholder="请输入模块界定值"
+                               value="{$info['module']}" datatype="*" nullmsg="请输入模块界定值"/>
+                        <span class="help-block">
+                            菜单表可能存在多个系统的菜单配置，需填写界定的值
+                        </span>
+                    </div>
+                </div>
+                {/if}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label form-label">
+                        排序
+                    </label>
+                    <div class="col-sm-10">
+                        <input class="form-control input-w-40" id="sort" name="sort" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')" type="text"
+                               value="{$info['sort']|default='0'}"/>
+                        <span class="help-block" id="helpBlock">
+                            值越大，排序越靠前
+                        </span>
+                    </div>
+                </div>
+                <div class="dialog_footer_div_height"></div>
+                <div id="submit_buttonbar_postion">
+                    <div class="f-r">
+                        <button class="btn btn-default" id="submit" type="submit">
+                            保存并生成权限
+                        </button>
+                        <button class="btn btn-light" type="button" value="" onclick="art.dialog.close();">
+                            关闭
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name='script'}
+{include file="common/validform"/}
+<script>
+</script>
+{/block}

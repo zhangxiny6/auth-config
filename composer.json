@@ -1,0 +1,5 @@
+{
+    "require": {
+        "magicalex/write-ini-file": "^2.0"
+    }
+}

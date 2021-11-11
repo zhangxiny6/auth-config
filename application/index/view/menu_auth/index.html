@@ -1,0 +1,99 @@
+{extend name="base:main_base" /}
+{block name="style"}
+	<style>
+        .menu_title{
+            display: inline-block;
+            font-weight: bold;
+            font-size: 12px;
+            margin-left: 5px;
+            height: 25px;
+            line-height: 25px;
+        }
+        .menu_title font{
+            color:red;
+        }
+
+        .panel-auto{
+            margin-top: 0 !important;
+        }
+        .item-list-hd{
+            margin-bottom: 0 !important;
+        }
+	</style>
+{/block}
+{block name="content"}
+	<div class="container-padding">
+        <div class="panel-default panel-auto list-search-bar">
+            <div class="row float-l">
+                <div class="item-list-hd">
+                    <ul>
+                        <li class="tabs-t" onclick="_audit_withdraw()">
+                            <a>系统函数</a>
+                        </li>
+                        <li class="tabs-t current">
+                            <a>菜单配置</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row float-r">
+                <form class="form-search" id="form_search" action="{:url('index')}" onsubmit="return false;">
+                    <input type="hidden" name="pid" id="pid" value="0" />
+                    <div class="form-group inline-block">
+                        <label class="">所属端：</label>
+                        <select name="module_name" id="module_name">
+                            {volist name='auth_config_arr' id='auth_config'}
+                            <option value="{$auth_config.module}">{$auth_config.name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="form-group inline-block">
+                        <div class="search-box inline-block">
+                            关键词：
+                            <input type="text" class="search-inp" name="searchinfo" placeholder="可输入菜单标题搜索">
+                        </div>
+                        <div class="btn-group inline-block" role="group">
+                            <button href="javascript:void(0);" class="btn btn-default btn-auto btn-sm" id="btn_search"><i class="fa fa-search"></i>搜索</button>
+                            <button href="javascript:void(0);" class="btn btn-light btn-auto btn-sm" id="btn_search_all" onclick="javascript: window.location.reload();">查看所有</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="gridPanel">
+
+            <table id="gridTable"></table>
+            <div id="gridPager"></div>
+        </div>
+    </div>
+    {include file='common/searchSelect'}
+{/block}
+
+{block name="script"}
+	{include file="common/artdialog"/}
+    {include file="common/notifit"/}
+	{include file="common/jGrid" /}
+	
+	<script>
+       var menuAuthUrl='{:url("AuthConfig/index")}';
+	   var listUrl='{:Url("index_list")}';
+	   var is_load_list=0;
+	   //当前显示的列表类型
+	   var curShowListType = 'admin';
+	   //添加菜单
+       var addMenuUrl = "{:URL('Menu/add_menu')}?pid=";
+       //修改菜单
+       var editMenuUrl = "{:URL('Menu/edit_menu')}?menu_id=";
+       //删除菜单
+       var delMenuUrl = "{:url('Menu/del_menu')}";
+
+       /*函数配置*/
+       function _audit_withdraw(){
+           window.location.href = menuAuthUrl;
+       }
+       $(function () {
+           $("#central_warehouse").select2({language: "zh-CN"});
+       })
+	</script>
+    <script type="text/javascript" src="/static/pc/js/module/menu.js?v={$version}" ></script>
+{/block}

@@ -1,0 +1,11 @@
+<div class="btn-group" role="group" aria-label="...">
+    {if condition="config('search_btn_type') eq '1'"}
+      <button href="javascript:void(0);" class="btn btn-default btn-auto btn-sm" id="btn_search_other" onclick="search_filter_dataList()"><i class="fa fa-search">搜索</i></button>
+         {else/}
+      <button href="javascript:void(0);" class="btn btn-default btn-auto btn-sm" id="btn_search"><i class="fa fa-search">搜索</i></button>
+    {/if}
+    <button href="javascript:void(0);" class="btn btn-light btn-auto btn-sm" id="btn_search_all" onclick="javascript: window.location.reload();">查看所有</button>
+</div>
+<div class="search-box">
+    <input type="text" class="search-inp" name="searchinfo" placeholder="{:config('search_palceholder')}">
+</div>

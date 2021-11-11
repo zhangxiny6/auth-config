@@ -1,0 +1,74 @@
+.bodybg {
+    background: url(/static/pc/ui/img/bg.jpg);
+    background-size: cover
+}
+.prompt-window{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -310px 0 0 -450px;
+    background: #fff;
+    width: 900px;
+    height: 615px;
+    border-radius: 5px;
+}
+.outer-layer{
+    padding: 10px 40px;
+    display: block;
+}
+.img-layer{
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.prompt-icon{
+    color: red;
+}
+.browser-icon{
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.detail-outer-layer{
+    padding: 15px;
+    z-index: 2;
+    display: none;
+}
+.return-btn{
+    font-size: 15px;
+    line-height: 25px;
+    color: #018A3A;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.return-icon{
+    margin-right: 8px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.browser-title{
+    text-align: center;
+    color:#669ef3;
+}
+.prompt-information{
+    margin-bottom: 15px;
+}
+.browser-icon-layer{
+    text-align: center;
+    margin-bottom:10px;
+}
+.check-detail{
+    color: #669ef3;
+    cursor:pointer;
+}
+.head-title{
+    margin-top: 10px;
+    color: #26A33C;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;;
+}
+.prompt-title{
+    text-indent:2em;
+}

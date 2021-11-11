@@ -1,0 +1,38 @@
+{extend name="base:main_base" /}
+{block name="style"}
+<style>
+
+</style>
+{/block}
+{block name="content"}
+<div class="container-padding">
+    <div class="gridPanel">
+        <div class="panel-default panel-auto list-search-bar">
+            <div class="row float-l">
+                <button class="btn btn-default btn-auto btn-sm" onclick="addOrEdit(0);">
+                    <i class="fa fa-plus-circle"></i>新增模块
+                </button>
+            </div>
+        </div>
+        <table id="gridTable">
+        </table>
+        <div id="gridPager">
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+{include file="common/artdialog"/}
+{include file="common/notifit"/}
+{include file="common/jGrid" /}
+<script>
+    var listUrl='{:url("AuthConfig/index")}';
+    var addUrl = '{:url("AuthConfig/addAuthConfig")}?id=';   //添加权限配置
+    var getClassAuthUrl = "{:url('AuthConfig/getClassAuth')}?id=";    //得到类权限
+    var configMenuUrl = "{:url('AuthConfig/configMenu')}?id=";  //配置菜单
+    var menuConfigUrl = "{:url('MenuAuth/index')}?id=";  //菜单配置
+    var delUrl = "{:url('AuthConfig/deleteAuthConfig')}"; //删除
+    var menu_field_module = "{$menu_field_module}";
+</script>
+<script type="text/javascript" src="/static/js/auth_config.js?v={$version}" ></script>
+{/block}

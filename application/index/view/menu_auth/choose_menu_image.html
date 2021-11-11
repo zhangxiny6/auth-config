@@ -1,0 +1,70 @@
+{extend name="base:main_base" /}
+
+{block name="content"}
+    <link rel="stylesheet" type="text/css" href="{$staticsResourceUrl}/pc/css/menu_auth_choose_menu_image.css"/>
+    <div class="menu-select-div">
+        <div class="menu-select-header">样式分类</div>
+        <ul class="menu-select-list">
+            <li _type_id="0" class="menu-select-item">全部</li>
+            <li _type_id="m1" class="menu-select-item">中心仓手机端</li>
+            <li _type_id="m2" class="menu-select-item">管理平台端</li>
+            <li _type_id="m3" class="menu-select-item">公司手机端</li>
+            <li _type_id="m4" class="menu-select-item">供应商手机端</li>
+        </ul>
+    </div>
+    <ul class="menu-list" id="imagesVue">
+      {volist name='menu_img' id='image'}
+        <li _img_url="{$image.img_url}" _show_img_url="{$commonStaticsResourceUrl}/{$image.show_img_url}" class="menu-item">
+            <div><img src="{$commonStaticsResourceUrl}/{$image.show_img_url}"/></div>
+          <div class="menu-item-text">{$image.file_name}</div>
+        </li>
+      {/volist}
+        {empty name='menu_img'}
+        无图片数据
+        {/empty}
+    </ul>
+	<div class="es_buttonbar_postion">
+  		<button id="submit" style="margin-right: 10px;" type="button" onclick="sureChoose();" class="btn btn-primary" >确定选择</button>
+        <button style="margin-right: 30px;" onclick="art.dialog.close();" id="close_dialog" type="button" class="btn btn-light">关闭</button>
+    </div>
+{/block}
+
+{block name="script"}
+	<script type="text/javascript">
+
+        var type = "{$type}";
+
+        $('.menu-select-item').removeClass('active');
+        $(".menu-select-item[_type_id='"+type+"']").addClass('active');
+
+        var getData = "{:URL()}?type=";
+
+        var curr_img = null;
+        var curr_img_src = null;
+        //风格类别点击
+        $(".menu-select-list .menu-select-item").click(function () {
+            var type = $(this).attr('_type_id');
+            window.location.href = getData+type;
+        });
+
+        //图片点击
+        $(".menu-list .menu-item").click(function () {
+            $('.menu-item').removeClass('menu-item-active');
+            $(this).addClass('menu-item-active');
+            curr_img = $(this).attr('_img_url');
+            curr_img_src = $(this).attr('_show_img_url');
+        });
+
+        //确认选择
+        function sureChoose(){
+			if( curr_img == null ){
+                art.dialog.alert('请选菜单图片后再点击确定！', null);
+				return;
+			}
+			var win=art.dialog.opener;
+            win.getChooseImages($.trim(curr_img),curr_img_src);
+            art.dialog.close();
+		}
+	</script>
+{/block}
+

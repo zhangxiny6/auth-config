@@ -1,0 +1,155 @@
+/*
+ * Project Details_01 Public Style
+ * details-*是系统开发自定义兼容样式
+ * @author 张
+ * @qqNumber 2639347794
+ */
+.details-title {
+    width: 100%;
+    margin: 0 auto;
+    float: inherit;
+    height: 40px;
+    font-size: 10pt!important;
+    line-height: 50px;
+}
+.details-title-div {
+    font-size: 10pt !important;
+    margin-top: 0px;
+    height: 35px;
+    line-height: 35px;
+    background: #f8f8f8;
+    padding-left: 10px;
+    color: #06ce5a;
+    border-radius: 0 3px 3px 0;
+    border-left: 3px solid #199ed8;
+}
+.details-title-text {
+    color:#199ed8;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px!important;
+    height: 35px;
+    line-height: 35px;
+}
+.details-item{
+    height: 35px;
+    line-height: 35px;
+}
+.details-item-text{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.details-item:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.details-item-inner{
+    width: 50%;
+    float: left;
+}
+
+.details-item-label{
+    float: left;
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+}
+.details-table{
+    margin: 10px;
+    /*margin: auto auto 10px auto;*/
+    width:98%;
+    border:1px solid #dbd8d3;
+}
+.details-table thead th{
+    text-align:center;
+    height:35px;
+}
+.details-table tbody td{
+    text-align:center;
+    height:35px;
+}
+.details-table thead th,.details-table tbody td,.details-table tfoot td{
+    padding-left:5px;
+    padding-right:5px;
+}
+.details-table thead{
+    background:#ededf3;
+}
+.details-block{
+    /*border:1px solid #cdcac4;*/
+}
+.details-margin-10{
+    margin-top:10px;
+}
+.details-table-no-data{
+    text-align:center;
+}
+.details-table-important .details-important-head{
+    text-align:center;
+    color:#fff;
+    background:#009fd6;
+}
+.details-table-important .details-important-tr{
+    text-align:center;
+    background:#e1f5fc;
+}
+.details-important-head td input[type='checkbox']{
+    height:23px;
+}
+.details-important-tr td input[type='checkbox']{
+    height:23px;
+}
+.details-width-100{
+    width:100%;
+}
+
+.details-item-div .details-item-label{
+    width:15%;
+}
+.details-item-div .details-item-text{
+    /*width:100%;*/
+}
+.create-table-label{
+    background:#ecedf4;
+    font-weight:bold;
+    width:20%;
+    height:40px;
+}
+.details-text-center{
+    text-align:center !important;
+}
+.details-text-right{
+    text-align:right !important;
+}
+.details-text-left{
+    text-align:left !important;
+}
+
+.details-item-more-text{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal !important;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: vertical;
+
+}
+.details-height-auto{
+    height:auto !important;
+    line-height: 24px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+
+}

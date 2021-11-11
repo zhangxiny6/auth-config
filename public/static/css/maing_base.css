@@ -1,0 +1,31 @@
+
+/*表格顶部tab样式*/
+.item-list-hd { margin-bottom:-1px;clear:both; overflow:hidden;}
+.item-list-hd ul{border:none; height:auto;padding-left: 0;margin-bottom: 0;}
+@media (min-width:468px) {.item-list-hd ul{ border:none; height:auto}}
+@media (min-width:768px) {.item-list-hd ul{ height: 38px;}}
+@media (min-width:992px) {.item-list-hd ul{ height: 36px;}}
+@media (min-width:1200px) {.item-list-hd ul{ height: 36px;}}
+.item-list-hd ul li{display:inline-block; position: relative; float: left;line-height: 21px;text-align: center;cursor: pointer;z-index: 1; background:none;width:25%;border:none; margin-bottom:auto;margin-right:auto; padding:5px 0;background:none;}
+@media (min-width:468px) {.item-list-hd ul li{ width:25%; border:none; margin-bottom:auto;margin-right:auto; padding:5px 0;background:none;}}
+@media (min-width:768px) {.item-list-hd ul li{width:auto; border:none; margin-bottom:auto; margin-right:auto; padding:8px 12px; background:none}}
+@media (min-width:992px) {.item-list-hd ul li{width:auto;border-top: 1px solid #DDD;border-left: 1px solid #DDD;border-right: 1px solid #DDD; margin-bottom:-1px; margin-right:-1px;padding:6px 16px 7px; background:#Fcfcfc;}}
+@media (min-width:1200px) {.item-list-hd ul li{width:auto;border-top: 1px solid #DDD;border-left: 1px solid #DDD;border-right: 1px solid #DDD;margin-bottom:-1px;margin-right:-1px;padding:6px 16px 7px;  background:#Fcfcfc;}}
+.item-list-hd ul li a{ border-right:1px solid #ddd; display:inline-block;width: 100%; text-decoration: none;font-size:12px;}
+@media (min-width:468px) { .item-list-hd ul li a{ border-right:1px solid #ddd;}}
+@media (min-width:768px) { .item-list-hd ul li a{ border-right:none;}}
+@media (min-width:992px) { .item-list-hd ul li a{ border-right:none;}}
+@media (min-width:1200px) { .item-list-hd ul li a{ border-right:none;}}
+.item-list-hd  .tabs-t.last a,.item-list-hd  .tabs-b.last a{ border-right:none !important;}
+.item-list-hd ul li.tabs-t{ border-bottom:1px dotted #ddd;}
+@media (min-width:468px) {.item-list-hd ul li.tabs-t{ border-bottom:1px dotted #ddd;}}
+@media (min-width:768px) {.item-list-hd ul li.tabs-t{ border-bottom:none;}}
+@media (min-width:992px) {.item-list-hd ul li.tabs-t{ border-bottom:none;}}
+@media(min-width:1200px) {.item-list-hd ul li.tabs-t{border-bottom:none;}}
+.item-list-hd ul li.current,.item-list-hd ul li.active{border-top: 0 none;border-style: solid none;border-color: #58B4FF -moz-use-text-color #FFF; background:#fff; color:#666;z-index: 3; margin-bottom:-1px;margin-bottom:auto;border-width:0 0 1px;border-bottom:1px dotted #ddd;}
+@media(min-width:468px){.item-list-hd ul li.current,.item-list-hd ul li.active{margin-bottom:auto;border-width:0 0 1px;border-bottom:1px dotted #ddd;}}
+@media(min-width:768px){.item-list-hd ul li.current,.item-list-hd ul li.active{margin-bottom:auto;border-bottom:2px solid #58B4FF;}}
+@media(min-width:992px){.item-list-hd ul li.current,.item-list-hd ul li.active{border-width: 2px 0px 1px;border-color: #58B4FF -moz-use-text-color #FFF; border-left: 1px solid #DDD; border-right: 1px solid #DDD;border-bottom: none;border-top: 2px solid #58B4FF;}}
+@media(min-width:1200px) {.item-list-hd ul li.current,.item-list-hd ul li.active{border-width: 2px 0px 1px;border-color: #58B4FF -moz-use-text-color #FFF; border-left: 1px solid #DDD; border-right: 1px solid #DDD;border-bottom: none;border-top: 2px solid #58B4FF;}}
+.item-list-hd ul li:hover{ background:#fff;}
+.item-list-hd ul li:hover a,.item-list-hd ul li.current a,.item-list-hd ul li.active a{ color:#58B4FF;}

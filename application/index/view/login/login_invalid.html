@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="keywords"/>
+
+    <style>
+        body{background: #ffffff;padding: 0px;margin:0;overflow: hidden;width: 100%;}
+        .system-message{margin: auto;margin-top: 50px;}
+        .img{width: 100%; height: 180px;margin: 0 auto;text-align: center; }
+        .img img{height: 180px}
+        .system-message .icon{width: 20px;vertical-align: sub;margin-right: 6px;}
+        .inf{margin: 0 auto; text-align: center;font-size: 18px; text-decoration: none;}
+        .system-message .jump{ padding-top:60px; margin: 0 auto; text-align: center;font-size: 14px;letter-spacing:2px; text-decoration: none;}
+        .system-message .jump a{ color: #333; }
+        .system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display: none; }
+        .jump-success .inf{
+            color:green;
+        }
+        .jump-error .inf{
+            color:red;
+        }
+    </style>
+</head>
+<body class="bodybg center_bin_body_ui">
+
+<div class="system-message">
+    <div class="jump-error">
+        <div class="img"  >
+            <img src="/static/pc/image/tpl_img/error.jpg?v=2019" />
+        </div>
+        <div class="inf"><img class='icon' src="/static/pc/image/tpl_img/err-icon.png"/>
+            当前登录已失效，请您重新登录
+        </div>
+    </div>
+    <p class="detail"></p>
+    <p class="jump">
+        <a id="href" href="{$returnUrl}">已重新登录，刷新</a>
+    </p>
+</div>
+
+</body>
+{include file="common/artdialog"/}
+
+<script src="/static/js/jquery.min.js?v={$version}" type="text/javascript"></script>
+<script src="/static/js/common.js?v={$version}" type="text/javascript"></script>
+<script type="text/javascript">
+    openSimpleLogin();
+    var curr_page_url = '{$returnUrl}';
+</script>
+</html>

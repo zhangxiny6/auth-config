@@ -1,0 +1,373 @@
+---------------------------------------------------------------
+[ 2021-10-10T10:21:59+08:00 ] 127.0.0.1 GET www.auth.com/
+[运行时间：0.102158s] [吞吐率：9.79req/s] [内存消耗：1,651.23kb] [文件加载：40]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-10-10T10:21:59+08:00 ] 127.0.0.1 GET www.auth.com/index/Login/index.html
+[运行时间：0.039009s] [吞吐率：25.64req/s] [内存消耗：1,548.66kb] [文件加载：38]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/Login/index_html' => '',
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ D:\2code\1php\zxy\auth-config\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\login\index.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'username',
+  2 => 'domain_name',
+  3 => 'version',
+  4 => 'staticsResourceUrl',
+  5 => 'commonStaticsResourceUrl',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-10-10T10:22:00+08:00 ] 127.0.0.1 GET www.auth.com/captcha.html
+[运行时间：0.063032s] [吞吐率：15.86req/s] [内存消耗：1,225.32kb] [文件加载：31]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/Login/index.html',
+  'accept' => 'image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\2code\1php\zxy\auth-config\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-10-10T10:22:04+08:00 ] 127.0.0.1 POST www.auth.com/index/Login/index.html
+[运行时间：0.085077s] [吞吐率：11.75req/s] [内存消耗：2,363.59kb] [文件加载：47]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/Login/index.html',
+  'origin' => 'http://www.auth.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '166',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/Login/index_html' => '',
+  'page_title' => '登录到权限管理系统',
+  'loginMode' => '1',
+  'username1' => 'admin',
+  'password' => '123456',
+  'validation' => 'pf3',
+  'check_status' => '1',
+)
+[ info ] [ RUN ] app\index\controller\Login->index[ D:\2code\1php\zxy\auth-config\application\index\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012082s ] mysql:host=localhost;port=3306;dbname=auth_manage_db;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `am_manage_users` [ RunTime:0.023104s ]
+[ sql ] [ SQL ] SELECT * FROM `am_manage_users` WHERE  `user_name` = 'admin'  AND `password` = '347940aacdbd9d502325150ae5d07d96' LIMIT 1 [ RunTime:0.000622s ]
+---------------------------------------------------------------
+[ 2021-10-10T10:22:05+08:00 ] 127.0.0.1 GET www.auth.com/
+[运行时间：0.057130s] [吞吐率：17.50req/s] [内存消耗：1,801.71kb] [文件加载：41]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/Login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\2code\1php\zxy\auth-config\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\index\index.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'currentViewType',
+  2 => 'currentViewTitle',
+  3 => 'version',
+  4 => 'userInfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-10-10T10:22:06+08:00 ] 127.0.0.1 GET www.auth.com/index/AuthConfig/index.html
+[运行时间：0.110300s] [吞吐率：9.07req/s] [内存消耗：1,910.30kb] [文件加载：42]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'AuthConfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/AuthConfig/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\AuthConfig->index[ D:\2code\1php\zxy\auth-config\application\index\controller\AuthConfig.php ]
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\auth_config\index.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'currentViewType',
+  2 => 'currentViewTitle',
+  3 => 'version',
+  4 => 'menu_field_module',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-10-10T10:22:06+08:00 ] 127.0.0.1 POST www.auth.com/index/AuthConfig/index.html
+[运行时间：0.101799s] [吞吐率：9.82req/s] [内存消耗：2,460.22kb] [文件加载：46]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'AuthConfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/index/AuthConfig/index.html',
+  'origin' => 'http://www.auth.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '65',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/AuthConfig/index_html' => '',
+  '_search' => 'false',
+  'nd' => '1633832526229',
+  'rows' => '20',
+  'page' => '1',
+  'sidx' => 'sort',
+  'sord' => 'desc',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\AuthConfig->index[ D:\2code\1php\zxy\auth-config\application\index\controller\AuthConfig.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001923s ] mysql:host=localhost;port=3306;dbname=auth_manage_db;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `am_auth_config` [ RunTime:0.013199s ]
+[ sql ] [ SQL ] SELECT count(*) as tp_count FROM `am_auth_config` `` ORDER BY `sort` DESC LIMIT 1 [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT `file_path`,`name`,`module`,`sort`,`createtime`,`id` FROM `am_auth_config` `` ORDER BY `sort` DESC LIMIT 0,20 [ RunTime:0.000439s ]
+---------------------------------------------------------------
+[ 2021-10-10T10:22:07+08:00 ] 127.0.0.1 GET www.auth.com/index/AuthConfig/addAuthConfig.html?id=
+[运行时间：0.085555s] [吞吐率：11.69req/s] [内存消耗：2,682.82kb] [文件加载：50]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'AuthConfig',
+    2 => 'addAuthConfig',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.auth.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/index/AuthConfig/addAuthConfig_html' => '',
+  'id' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'session_id',
+  'prefix' => 'large_area_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\AuthConfig->addAuthConfig[ D:\2code\1php\zxy\auth-config\application\index\controller\AuthConfig.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\2code\1php\zxy\auth-config\public/../application/index\view\auth_config\add_auth_config.html [ array (
+  0 => 'WEB_SITE_TITLE',
+  1 => 'currentViewType',
+  2 => 'currentViewTitle',
+  3 => 'version',
+  4 => 'info',
+  5 => 'menu_field_module',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003107s ] mysql:host=localhost;port=3306;dbname=auth_manage_db;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `INFORMATION_SCHEMA`.`COLUMNS` [ RunTime:0.004133s ]
+[ sql ] [ SQL ] SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE  (  table_name = 'am_auth_config' AND table_schema = 'auth_manage_db' ) [ RunTime:0.001793s ]
+---------------------------------------------------------------
+[ 2021-10-10T10:22:15+08:00 ] 127.0.0.1 GET www.auth.com/static/plugins/bootstrap/bootstrap.css.map
+[运行时间：0.059387s] [吞吐率：16.84req/s] [内存消耗：1,207.47kb] [文件加载：32]
+[ info ] [ LANG ] D:\2code\1php\zxy\auth-config\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'plugins',
+    2 => 'bootstrap',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lgqhe6v7tu32r270l9qhcfm3n3',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Edg/94.0.992.38',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.auth.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/plugins/bootstrap/bootstrap_css_map' => '',
+)
+[ info ] [ LOG ] INIT File

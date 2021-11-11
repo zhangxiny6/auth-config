@@ -1,0 +1,56 @@
+#ui_notifIt {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 99999 !important;
+    border-radius: 30px;
+}
+
+#ui_notifIt p {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+#ui_notifIt  table {
+    color: #fFFFFF !important;
+    font-size: 12px !important;
+}
+/* Color setup */
+/* Configure this if you want */
+.notifit_success {
+    border-left: 3px solid #07973a;
+    background-color: #30c109;
+    color: white;
+}
+
+.notifit_error {
+    border-left: 3px solid #fbf201;
+    background-color: #f84634;
+    color: white;
+}
+
+.notifit_warning {
+    border-left: 3px solid #fbf201;
+    background-color: orange;
+    color: white;
+}
+
+.notifit_info {
+    border-left: 3px solid #47C3FA;
+    background-color: #1C93C9;
+    color: white;
+}
+
+.notifit_default {
+    /*border-left: 3px solid #999;*/
+    background-color: #EEE;
+    color: #444;
+}

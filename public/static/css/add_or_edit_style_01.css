@@ -1,0 +1,62 @@
+/*
+ * Project AddOrEdit Public Style
+ * form-*是使用了一套前端框架的样式
+ * @author 张
+ * @qqNumber 2639347794
+ */
+.form-group{
+    margin-bottom: 10px;
+}
+.form-group-inner{
+    width: 50%;
+    float: left;
+}
+.form-group-inner input,.form-group-inner select{
+    width:100%;
+}
+.form-group-inner .col-sm-10{
+    width:70%;
+}
+.form-group-inner label{
+    width:30%;
+}
+.form-group-item label{
+    width:15%;
+}
+.form-group-text{
+    height:36px;
+    line-height:38px;
+}
+.form-group-item .col-sm-10{
+    width:85%;
+}
+.form-group-input-icon{
+    width: 80% !important;
+    float: left;
+}
+.form-group-icon{
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #ccc;
+    border-left: none;
+    background: #eee;
+    height: 34px;
+    float: left;
+    line-height: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+    width: 20%;
+}
+.form-group-input-btn{
+
+    float:left;
+    width:60% !important;
+}
+.form-group-btn{
+    margin-top: 1px;
+    padding-left: 5px;
+    float: left;
+    width: 40%;
+}

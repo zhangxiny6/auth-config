@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gb2312">
+        <title>jQuery动画通知插件notifIt</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+        <script src="../jquery-1.10.2.min.js"></script>
+        <script src="notifIt.js"></script>
+        <link href="notifIt.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="wrap">
+            <p class="title">notifIt!</p>
+            <p class="subtitle">Notify what you want!</p>
+			<h2><span class="step">Step 1 -</span> Try it!</h2>
+            <button onclick="not1()">NotifIt! 1 (Default position, Success)</button>
+            <button onclick="not2()">NotifIt! 2 (Centered, error)</button>
+            <button onclick="not3()">NotifIt! 3 (Left, Warning)</button>
+            <button onclick="not4()">NotifIt! 4 (Centered, Info, Custom size)</button>
+            <button onclick="not5()">NotifIt! 5 (Centered, error, custom size, click-to-dismiss)</button>
+            <button onclick="not6()">NotifIt! 6 (Centered, warning, custom opacity)</button>
+        </div>
+    <script>
+        function not1() {
+            notif({
+                msg: "<b>Success:</b> In 5 seconds i'll be gone",
+                type: "success"
+            });
+        }
+        function not2() {
+            notif({
+                msg: "<b>Oops!</b> A wild error appeared!",
+                type: "error",
+                position: "center"
+            });
+        }
+        function not3() {
+            notif({
+                type: "warning",
+                msg: "<b>Warning:</b> Be patient my friend.",
+                position: "left"
+            });
+        }
+        function not4() {
+            notif({
+                type: "info",
+                msg: "<b>Info: </b>Some info here.",
+                width: "all",
+                height: 100,
+                position: "center"
+            });
+        }
+        function not5() {
+            notif({
+                type: "error",
+                msg: "<b>Error: </b>This error will stay here until you click it.",
+                position: "center",
+                width: 500,
+                height: 60,
+                autohide: false
+            });
+        }
+        function not6() {
+            notif({
+                type: "warning",
+                msg: "Opacity is cool!",
+                position: "center",
+                opacity: 0.8
+            });
+        }
+    </script>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>
