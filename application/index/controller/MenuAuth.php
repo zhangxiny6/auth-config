@@ -1,4 +1,5 @@
 <?php
+
 namespace app\index\controller;
 
 use think\Db;
@@ -7,10 +8,9 @@ use think\Request;
 use think\Config;
 
 /**
- * 权限菜单管理
  * @authName 权限菜单管理
  * @authStatus 1
- * @author zxy
+ * @author zhangxiny
  * @createTime 2017-11-15 17:23:36
  *
  * Class MenuAuth
@@ -23,10 +23,9 @@ class MenuAuth extends Base
     private $table = '';
 
     /**
-     * 初始化
      * @authName 初始化
      * @authStatus 0
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-15 17:23:52
      *
      */
@@ -37,17 +36,16 @@ class MenuAuth extends Base
         $authConfigArr = Db::name('auth_config')
             ->field('module,name')
             ->select();
-        foreach($authConfigArr as $key => $val){
+        foreach ($authConfigArr as $key => $val) {
             $this->menuModules[$val['module']] = $val['name'];
         }
         $this->table = getConfigValue('menu_table');
     }
 
     /**
-     * 编辑配置
      * @authName 权限菜单名称
      * @authStatus 1
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-15 17:24:53
      * @return mixed
      */
@@ -57,13 +55,14 @@ class MenuAuth extends Base
         $menu_id = $request->param('menu_id', 0, 'intval');
         $auth_config_id = input('auth_config_id');
         if (empty($menu_id)) {
-            $this->error('参数错误');exit;
-        } else if(empty($auth_config_id)) {
+            $this->error('参数错误');
+            exit;
+        } else if (empty($auth_config_id)) {
             $this->error('权限配置编号不存在');
         }
         //查出所属端，模块名
         $authConfigData = Db::name('auth_config')
-            ->where(array('id'=>$auth_config_id))
+            ->where(array('id' => $auth_config_id))
             ->field('module')
             ->find();
         if ($request->isPost()) {
@@ -96,9 +95,9 @@ class MenuAuth extends Base
         }
         /* 获取数据 */
         $menu = _menuDb()->name($this->table)->where('id', $menu_id)->find();
-        if($menu['pid']==0){
+        if ($menu['pid'] == 0) {
             $parent_menu_name = '顶级菜单';
-        }else{
+        } else {
             //得到父级菜单名
             $parent_menu_name = _menuDb()->name($this->table)->where('id', $menu['pid'])->value('title');
         }
@@ -109,19 +108,18 @@ class MenuAuth extends Base
             'pid' => $menu[getConfigValue('menu_field_pid')],
             'id' => $menu[getConfigValue('menu_field_id')],
         ];
-        $this->assign('parent_menu_name',$parent_menu_name);
-        $this->assign('parent_menu_id',$menu['pid']);
+        $this->assign('parent_menu_name', $parent_menu_name);
+        $this->assign('parent_menu_id', $menu['pid']);
         $this->assign('menu', $menu);
         $this->assign('auth_config_id', $auth_config_id);
-        $this->assign('module_name',$authConfigData['module']);
+        $this->assign('module_name', $authConfigData['module']);
         return $this->fetch('menu_auth/add_or_edit');
     }
 
     /**
-     * 新增菜单
      * @authName 新增菜单
      * @authStatus 1
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-15 17:25:05
      * @return mixed
      */
@@ -129,19 +127,19 @@ class MenuAuth extends Base
     {
         $parent_menu_id = input('parent_menu_id');
         $auth_config_id = input('auth_config_id');
-        if(empty($auth_config_id)){
+        if (empty($auth_config_id)) {
             $this->error('权限配置编号不存在');
-        }else if(empty($parent_menu_id)){
+        } else if (empty($parent_menu_id)) {
             $this->error('父级菜单不存在');
         }
         //查出所属端，模块名
         $authConfigData = Db::name('auth_config')
-            ->where(array('id'=>$auth_config_id))
+            ->where(array('id' => $auth_config_id))
             ->field('module')
             ->find();
         $request = Request::instance();
         if ($request->isPost()) {
-            if($parent_menu_id=='root'){
+            if ($parent_menu_id == 'root') {
                 $parent_menu_id = 0;
             }
             $data = [
@@ -175,9 +173,9 @@ class MenuAuth extends Base
         }
         $menusWhere['module'] = $authConfigData['module'];
         //如果是新增一级菜单
-        if($parent_menu_id=='root'){
+        if ($parent_menu_id == 'root') {
             $menu_name = '顶级菜单';
-        }else{
+        } else {
             //得到父级菜单名称
             $menu_name = _menuDb()->name($this->table)
                 ->where(getConfigValue('menu_field_id'), $parent_menu_id)
@@ -190,20 +188,19 @@ class MenuAuth extends Base
             'pid' => $parent_menu_id,
             'id' => '',
         ];
-        $this->assign('menu',$menu);
+        $this->assign('menu', $menu);
         //父级菜单名称
-        $this->assign('parent_menu_name',$menu_name);
+        $this->assign('parent_menu_name', $menu_name);
         //父级菜单编号
-        $this->assign('parent_menu_id',$parent_menu_id);
-        $this->assign('auth_config_id',$auth_config_id);
+        $this->assign('parent_menu_id', $parent_menu_id);
+        $this->assign('auth_config_id', $auth_config_id);
         return $this->fetch('menu_auth/add_or_edit');
     }
 
     /**
-     * 删除后台菜单
      * @authName 删除后台菜单
      * @authStatus 1
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-15 17:25:56
      */
     public function del_menu()

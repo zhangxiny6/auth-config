@@ -9,7 +9,7 @@ class AuthConfigService
 
     /**
      * @authName 更新权限配置
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2021-09-06 17:39:37
      * @param $auth_config_id
      * @return array
@@ -86,7 +86,7 @@ class AuthConfigService
 
     /**
      * @authName 插入函数权限
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2021-09-06 17:40:26
      * @param $methodArr
      * @return array
@@ -133,7 +133,7 @@ class AuthConfigService
 
     /**
      * @authName 插入控制器权限
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2021-09-06 17:40:52
      * @param $classArr
      * @param $authConfigArr
@@ -174,7 +174,7 @@ class AuthConfigService
 
     /**
      * @authName 得到日志文本
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2021-09-06 17:41:08
      * @param $reason
      * @param $method
@@ -191,7 +191,7 @@ class AuthConfigService
 
     /**
      * @authName 保存
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2021-09-06 17:46:09
      * @param $data
      */

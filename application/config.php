@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 /**
  * @authName 得到系统配置
- * @author zxy
+ * @author zhangxiny
  * @createTime 2021-08-20 10:08:30
  * @param $key
  * @return string
@@ -286,17 +286,10 @@ return [
     ],
     'url_convert'            => false,
 
-    //系统标识,用于记录缓存tag
-    'SystemTag'              => 'large_area',
-
-    //缓存数据目录
-    'WX_CONFIG_DIR'          => DS . 'opt' . DS . 'mydata' . DS . 'wxData' . DS,
-
     //静态资源域名
     'staticsResourceUrl'     => '/static/',
     //公共静态资源路径
     'commonStaticsResourceUrl'     => '/static/common',
-
 
     //需要控制的菜单数据库配置
     'menu_db_config' => [

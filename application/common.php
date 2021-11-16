@@ -126,7 +126,7 @@ function clearLoginInfo()
 
 /**
  * @authName 检查登录是否失效
- * @author zhangxinyu
+ * @author zhangxiny
  * @createTime 2020-03-24 18:10:03
  * @qqNumber 2639347794
  */
@@ -200,7 +200,7 @@ function _get_current_view_page_url($need_filter = 0)
 
 /**
  * @authName 得到系统配置
- * @author zxy
+ * @author zhangxiny
  * @createTime 2021-08-20 10:08:30
  * @param $key
  * @return string
@@ -222,7 +222,7 @@ function getConfigValue($key){
 
 /**
  * @authName 写入系统配置
- * @author zxy
+ * @author zhangxiny
  * @createTime 2021-08-23 15:34:05
  * @param $key
  * @param $value

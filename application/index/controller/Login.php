@@ -12,10 +12,9 @@ use think\Controller;
 use think\Db;
 
 /**
- * 登录页面
  * @authName 登录页面
  * @authStatus 1
- * @author zxy
+ * @author zhangxiny
  * @createTime 2017-11-16 16:30:41
  * @qqNumber 2639347794
  *
@@ -25,10 +24,9 @@ use think\Db;
 class Login extends Controller
 {
     /**
-     * 系统登录
      * @authName 系统登录
      * @authStatus 1
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-16 16:30:48
      * @qqNumber 2639347794
      *
@@ -39,18 +37,18 @@ class Login extends Controller
         //当前模块
         define('CURMODULE', "large_area");
         //支持的浏览器
-        $supportBrowserArr = ['Safari','Chrome','Firefox'];
+        $supportBrowserArr = ['Safari', 'Chrome', 'Firefox'];
         //是否支持
         $is_support = true;
         foreach ($supportBrowserArr as $index => $item) {
             //判断浏览器内核如果不是谷歌和火狐则跳转到提醒界面
-            if( strpos($_SERVER['HTTP_USER_AGENT'],$item)) {
+            if (strpos($_SERVER['HTTP_USER_AGENT'], $item)) {
                 break;
             }
             //不支持
             $is_support = false;
         }
-        if(!$is_support){
+        if (!$is_support) {
             $this->assign('version', config('version.fileversion'));
             //静态资源域名
             $this->assign('staticsResourceUrl', config('staticsResourceUrl'));
@@ -98,7 +96,7 @@ class Login extends Controller
             $reqData['username'] = $username;
             $reqData['loginMode'] = $loginMode;
             $reqData['source'] = 0; //获取当前访问终端类别
-            $reqData['page_title'] = input('page_title/s','');
+            $reqData['page_title'] = input('page_title/s', '');
             $loginLogData = Db::name('manage_users')->where([
                 'user_name' => $reqData['username'],
                 'password' => encrypt_password($reqData['password'])
@@ -124,7 +122,7 @@ class Login extends Controller
                 $username = input('param.username/s');
                 $domain_name = input('server.SERVER_NAME');
                 $this->assign('username', $username);
-                $this->assign('domain_name',$domain_name);
+                $this->assign('domain_name', $domain_name);
                 //文件缓存版本
                 $this->assign('version', config('version.fileversion'));
                 //静态资源域名
@@ -137,13 +135,11 @@ class Login extends Controller
     }
 
     /**
-     * 注销登录用户
      * @authName 注销登录用户
      * @authStatus 1
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-16 16:31:05
      * @qqNumber 2639347794
-     *
      */
     public function logout()
     {
@@ -165,7 +161,7 @@ class Login extends Controller
      * 浏览器版本过低的提醒html代码
      * @authName 浏览器版本过低的提醒html代码
      * @authStatus 0
-     * @author zxy
+     * @author zhangxiny
      * @createTime 2017-11-16 16:31:25
      * @qqNumber 2639347794
      *
@@ -181,7 +177,7 @@ class Login extends Controller
 
     /**
      * @authName 登录(简单版)
-     * @author zhangxinyu
+     * @author zhangxiny
      * @createTime 2020-03-24 17:02:06
      * @qqNumber 2639347794
      */
@@ -214,10 +210,10 @@ class Login extends Controller
         //静态资源域名
         $this->assign('commonStaticsResourceUrl', config('commonStaticsResourceUrl'));
         $returnUrl = session('returnUrl');
-        if(!empty($url)){
+        if (!empty($url)) {
             $returnUrl = $url;
         }
-        $this->assign('returnUrl',$returnUrl);
+        $this->assign('returnUrl', $returnUrl);
         return $this->fetch('login/login_invalid');
     }
 }
