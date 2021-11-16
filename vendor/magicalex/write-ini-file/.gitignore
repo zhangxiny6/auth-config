@@ -1,0 +1,4 @@
+vendor
+composer.lock
+coverage
+tests/file_ini/*_test.ini
