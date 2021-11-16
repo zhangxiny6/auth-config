@@ -65,10 +65,10 @@ function GetGrid() {
             var ids = jQuery("#gridTable").jqGrid('getDataIDs'); // 返回当前grid里所有数据的id
             for (var i = 0; i < ids.length; i++) {
                 var id = ids[i]; //
-                configMenuUrl = configMenuUrl + '' + id;
+                var url = configMenuUrl + '' + id;
                 var rowData = $('#gridTable').jqGrid('getRowData',id); //获得本列对象
                 var strmodify = "<a href='javascript:addOrEdit(this," + rowData.id + ");'><i class='fa fa-pencil'></i>修改</a> | ";
-                var strmenu = "<a target='_blank' href='"+configMenuUrl+"'><i class='fa fa-cog'></i>配置菜单</a> | ";
+                var strmenu = "<a target='_blank' href='"+url+"'><i class='fa fa-cog'></i>配置菜单</a> | ";
                 var del = "<a href='javascript:delData(" + rowData.id + ");' class='del-c'><i class='fa fa-trash'></i>删除</a>";
 
                 jQuery("#gridTable").jqGrid('setRowData', ids[i], {

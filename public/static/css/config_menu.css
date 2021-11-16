@@ -27,6 +27,7 @@
 }
 .ui-jqgrid .ui-jqgrid-bdiv {
     overflow:auto !important;
+    box-sizing: unset;
 }
 .menu_content{
     width: 95%;

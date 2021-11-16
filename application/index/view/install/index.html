@@ -269,7 +269,7 @@
                                 <select id="menu_module" name="menu_module">
                                     <option value="">==请先选择数据表==</option>
                                 </select>
-                                <span class="check-tips">当一个菜单表存在多个系统的菜单时，请填写区分的字段</span>
+                                <span class="check-tips">当一个菜单表存在多个系统的菜单时，请填写区分的字段。如XX管理平台，存在供应商系统、综合管理系统，两个系统的菜单存储在A表中，A根据type字段来区分是哪个系统，这里将type填入，后续可以进行多模块配置。</span>
                             </div>
                         </div>
                     </div>
@@ -280,13 +280,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group-img-demo">
                         <div class="form-group-item">
                             <label class="col-sm-2 control-label form-label"><span class="c-red">*</span>权限名称:</label>
                             <div class="col-sm-10">
                                 <input type="text" id="auth_authName" name="auth_authName"
-                                       class="text form-control"/>
+                                       class="text form-control" placeholder="如authName"/>
                             </div>
+                        </div>
+                        <div class="img-demo-div">
+                            <img src="/static/image/code_demo1.png"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -294,7 +297,7 @@
                             <label class="col-sm-2 control-label form-label">作者:</label>
                             <div class="col-sm-10">
                                 <input type="text" id="auth_author" name="auth_author"
-                                       class="text form-control"/>
+                                       class="text form-control" placeholder="如author"/>
                             </div>
                         </div>
                     </div>
@@ -303,7 +306,7 @@
                             <label class="col-sm-2 control-label form-label">时间:</label>
                             <div class="col-sm-10">
                                 <input type="text" id="auth_createTime" name="auth_createTime"
-                                       class="text form-control"/>
+                                       class="text form-control" placeholder="如createTime"/>
                             </div>
                         </div>
                     </div>

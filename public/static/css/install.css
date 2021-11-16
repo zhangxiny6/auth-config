@@ -97,3 +97,11 @@
 .check-tips{
     color:#696969;
 }
+.form-group-img-demo{
+    position: relative;
+}
+.img-demo-div{
+    position: absolute;
+    float: right;
+    left: 500px;
+}

@@ -56,6 +56,7 @@ class Install extends Controller
      * @authName 创建数据库
      * @author zxy
      * @createTime 2021-08-23 15:11:05
+     * @qqNumber 2639347794
      */
     public function createDb()
     {
@@ -72,9 +73,12 @@ class Install extends Controller
                 'password' => input('db_password'),
                 'hostname' => input('db_hostname'),
                 'hostport' => input('db_hostport'),
-                'database' => 'auth_manage_db'
+                'database' => ''
             ];
-            $db = Db::connect($config);
+            $db = Db::connect($config, false);
+            $db->execute('CREATE DATABASE IF NOT EXISTS auth_manage_db DEFAULT CHARSET utf8 COLLATE utf8_general_ci;');
+            $config['database'] = 'auth_manage_db';
+            $db = Db::connect($config, false);
             $path = dirname($_SERVER['DOCUMENT_ROOT']) . '/config/init.sql';
             $_sql = file_get_contents($path);
             $_arr = explode(';', $_sql);
@@ -104,6 +108,7 @@ class Install extends Controller
         writeConfigValue('db', 'db_password', $config['password']);
         writeConfigValue('db', 'db_hostport', $config['hostport']);
         writeConfigValue('db', 'db_database', 'auth_manage_db');
+        writeConfigValue('db', 'db_type', 'mysql');
         echo json_encode(['code' => 200, 'msg' => '', 'data' => $data]);exit;
     }
 
@@ -180,11 +185,12 @@ class Install extends Controller
      */
     public function check_dirfile(){
         $items = array(
-            array('./config', '可写', 'success', 'dir'),
-            array('./runtime', '可写', 'success', 'dir'),
+            array('/config', '可写', 'success', 'dir'),
+            array('/runtime', '可写', 'success', 'dir'),
         );
         foreach ($items as &$val) {
             $item =	dirname($_SERVER['DOCUMENT_ROOT']) . $val[0];
+            write_file_for_service('test', dirname($_SERVER['DOCUMENT_ROOT']) . $val[0]);
             if('dir' == $val[3]){
                 if(!is_writable($item)) {
                     $val[1] = '无权限';
