@@ -197,7 +197,7 @@ class AuthConfigService
      */
     public function save($data)
     {
-        if (empty($id)) {
+        if (empty($data['id'])) {
             $data['createtime'] = time();
             $id = Db::name('auth_config')->insertGetId($data);
             //同步权限

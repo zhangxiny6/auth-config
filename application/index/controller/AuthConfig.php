@@ -112,7 +112,7 @@ class AuthConfig extends Base
             'module' => input('module', ''),
             'sort' => input('sort/d'),
         ];
-        if (empty($data['module'])) {
+        if ($data['module'] == '') {
             $data['module'] = 'default';
         }
         $data['file_path'] = iconv('UTF-8', 'GB2312', $data['file_path']);
